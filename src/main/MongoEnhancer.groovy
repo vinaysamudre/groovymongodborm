@@ -1,5 +1,8 @@
 package main
 
+// Enhance the domain model to make it capable of mongodb operations.
+
+
 import com.mongodb.Mongo;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
