@@ -8,13 +8,14 @@ import com.mongodb.DBObject;
 import com.mongodb.DBCursor;
 
 
-def className ="Person"
+def className ="main.Person"
 MongoEnhancer me = new MongoEnhancer()
 me.enhanceDomainClass(className)
 println new Date()
 
 Person p = new Person()
 //p.drop()
+
 
 setPerson(p, "Vikas8")
 Person m = new Person()
