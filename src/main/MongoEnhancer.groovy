@@ -119,7 +119,8 @@ class MongoEnhancer {
 			DB db = MongoDatabase.mydb
 			DBCollection coll = db.getCollection(className)
 			log.trace( "Finding $doc in collection $className" )
-			def cur = coll.find(doc)
+            System.out.println( "Finding ........." )
+            def cur = coll.find(doc)
 		}
 	}
 

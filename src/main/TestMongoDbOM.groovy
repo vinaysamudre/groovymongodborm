@@ -3,7 +3,7 @@ package main
 import com.mongodb.Mongo;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
-import com.mongodb.BasicDBObject;
+import com.mongodb.BasicDBObject
 import com.mongodb.DBObject;
 import com.mongodb.DBCursor;
 
@@ -29,8 +29,8 @@ p.employees.add(e1)
 p.employees.add(e2)
 
 if (! p.insert() ) {
-	println "This object is not VALID"
-	println p.errors
+    println "This object is not VALID"
+    println p.errors
 }
 
 Person p3 = new Person()
@@ -40,8 +40,8 @@ cur = p3.find()
 println cur.class
 println "=============== before update start ============="
 while(cur.hasNext()) {
-	Person m3 = new Person(cur.next().toMap())
-	println "...$m3"
+    Person m3 = new Person(cur.next().toMap())
+    println "...$m3"
 }
 println "=============== before update end ${p3.count()} ============="
 
@@ -50,11 +50,11 @@ p2.firstName = "Vikas8"
 def cur = p2.find()
 println cur.class
 while(cur.hasNext()) {
-	Person m2 = new Person(cur.next().toMap())
-	m2.secondName = m2.secondName + " - changed"
-	m2.manager.firstName = "Vinay :-}"
-	m2.update()
-	println "==> updated"
+    Person m2 = new Person(cur.next().toMap())
+    m2.secondName = m2.secondName + " - changed"
+    m2.manager.firstName = "Vinay :-}"
+    m2.update()
+    println "==> updated"
 }
 
 p3 = new Person()
@@ -63,22 +63,22 @@ cur = p3.find()
 println cur.class
 println "=============== after update start ============="
 while(cur.hasNext()) {
-	Person m3 = new Person(cur.next().toMap())
-	println "...$m3"
+    Person m3 = new Person(cur.next().toMap())
+    println "...$m3"
 }
 println "=============== after update end ${p3.count()} ============="
 
 def setPerson(p, name) {
-	p.firstName = name
-	p.secondName = name
-	p.surName = name
-	p.count = 1
-	p.hobies = ["a", "b"]
-	df = new java.text.SimpleDateFormat("yyyyMMdd")
-	p.dob = df.parse("20081029")
-	p.comments = [
-		[ c : "comment1", createdOn : new Date() ],
-		[ c : "comment2", createdOn : new Date() ]
-	]
-	return p
+    p.firstName = name
+    p.secondName = name
+    p.surName = name
+    p.count = 1
+    p.hobies = ["a", "b"]
+    df = new java.text.SimpleDateFormat("yyyyMMdd")
+    p.dob = df.parse("20081029")
+    p.comments = [
+            [ c : "comment1", createdOn : new Date() ],
+            [ c : "comment2", createdOn : new Date() ]
+    ]
+    return p
 }

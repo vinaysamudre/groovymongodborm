@@ -2,7 +2,11 @@ package main
 
 import groovy.transform.ToString
 import org.bson.types.ObjectId
+import groovy.transform.Canonical
+import com.mongodb.DBCursor
+
 @ToString(includeNames = true, includeFields = true)
+@Canonical
 class Person extends BasicMongoEntity {
    ObjectId _id
    String firstName
@@ -22,4 +26,6 @@ class Person extends BasicMongoEntity {
 	 this.metaClass.errors = errors
 	 errors ? false : true
    }
+
+
 }
